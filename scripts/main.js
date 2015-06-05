@@ -1,10 +1,14 @@
 (function(){
   'use strict';
 
+  // Create an event hub
+
   $(document).ready(function(){
-    $('body').prepend(JST['application']());
+    GameApp.router = new GameApp.GameRouter();
+    Backbone.history.start();
+    // fetchMessages();
+    // window.setInterval(fetchMessages, 30000);
+
   });
-  $(document).ready(function(){
-    $('body').prepend(JST['characterselect']());
-  });
+
 })();
