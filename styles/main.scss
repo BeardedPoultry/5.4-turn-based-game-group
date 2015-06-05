@@ -14,8 +14,25 @@ $very-light-gray: #fafafa;
 $base-font-color: $dark-gray;
 $base-background-color: $very-light-gray;
 
-body {
+body #character {
   font-family: $base-font-family;
   background-color: $base-background-color;
   color: $base-font-color;
+  @include outer-container($local-max-width: $max-width);
+  margin: 0 auto;
+  background-image: url("/giphy.gif");
+  background-repeat: none;
+}
+
+header {
+ background-color: green;
+ 
+}
+
+.selection-container {
+  background-color: yellow;
+}
+
+#select body {
+  width: 100%;
 }
