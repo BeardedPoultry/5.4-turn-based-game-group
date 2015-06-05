@@ -20,7 +20,7 @@ body #character {
   color: $base-font-color;
   @include outer-container($local-max-width: $max-width);
   margin: 0 auto;
-  background-image: url("/giphy.gif");
+  background-image: url("");
   background-repeat: none;
 }
 
