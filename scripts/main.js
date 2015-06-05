@@ -9,11 +9,6 @@
     // fetchMessages();
     // window.setInterval(fetchMessages, 30000);
 
-    $('img').on('click', function(e) {
-		var target = e.target;
-		GameApp.vent.trigger('hero:selected', target);
-	});
-
   });
 
 })();

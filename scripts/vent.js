@@ -9,21 +9,13 @@ window.GameApp = window.GameApp || {};
   	//   $('.messages-list').html(JST['messages'](messages));
   	// });
 
-	GameApp.vent.on('hero:selected', function(target) {
-		// $(target).find('.selected').show();
-		console.log(target);
-		// generate hero and villain stats
-		// locationSelect();
-		// villainSelect();
-		// showButton();
-	});
-
 	GameApp.vent.on('game:start', function() {
 		// fire a function for clearing current template
 		// fire a function for loading fight template
 			// display hero and villain stats generated above
 			// display new background
-			// display hero and villain images
+			$('.hero-img img').attr("src", GameApp.hero.avatar);
+			$('.villain-img img').attr("src", GameApp.villain.avatar);
 			// display instructions
 
 	});

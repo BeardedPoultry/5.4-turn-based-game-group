@@ -11,6 +11,25 @@ window.GameApp = window.GameApp || {};
 
     index: function(){
       $('.application').html(JST['characterselect']());
+
+      GameApp.vent.on('hero:selected', function(target) {
+        if(!GameApp.heroSelected) {          
+          $(target).siblings().toggle('visibility');
+          $(target).toggleClass('selected'); 
+          GameApp.hero = new GenerateHero(target.id);
+          GameApp.heroSelected = true;
+        }
+
+        // else
+
+
+        console.log(target);
+
+
+        // showButton();
+        
+      });
+
     },
 
     fight: function() {
