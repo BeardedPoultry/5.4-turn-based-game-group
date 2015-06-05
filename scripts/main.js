@@ -4,7 +4,4 @@
   $(document).ready(function(){
     $('body').prepend(JST['application']());
   });
-  $(document).ready(function(){
-    $('body').prepend(JST['characterselect']());
-  });
 })();
