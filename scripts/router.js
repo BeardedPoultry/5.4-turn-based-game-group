@@ -13,9 +13,9 @@ window.GameApp = window.GameApp || {};
       $('.application').html(JST['characterselect']());
 
       GameApp.vent.on('hero:selected', function(target) {
-        if(!GameApp.heroSelected) {          
+        if(!GameApp.heroSelected) {
           $(target).siblings().toggle('visibility');
-          $(target).toggleClass('selected'); 
+          $(target).toggleClass('selected');
           GameApp.hero = new GameApp.GenerateHero(target.id);
           GameApp.heroSelected = true;
         }
