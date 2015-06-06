@@ -22,6 +22,9 @@ window.GameApp = window.GameApp || {};
 
         // else
 
+        GameApp.vent.on('attack', function() {
+          GameApp.heroAttack();
+        });
 
         console.log(target);
 
