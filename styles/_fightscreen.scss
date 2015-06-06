@@ -1,0 +1,47 @@
+body {
+  background-image: url("http://res1.windows.microsoft.com/resbox/en/windows/main/de8c70e4-9fcf-4f21-878d-49512f0379b2_4.jpg");
+  color: rgba(174, 173, 162, 1);
+}
+.fight-header {
+  width: max;
+  margin-bottom: 75px;
+}
+.villain-info {
+  text-align: right;
+  width: 400px;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+.health-green {
+background-color: rgba(0, 178, 72, 1);
+  height: 25px;
+  width: 450px;
+  margin:0;
+}
+
+.health-red {
+background-color: rgba(255, 43, 29, 1);
+  height:25px;
+width: 450px;
+  margin:0;
+}
+.villain-img {
+  height: 400px;
+  width: 200px;
+  background-color: red;
+  right: 0;
+  position: absolute;
+  margin-right: 20px;
+}
+.hero-img {
+  height: 400px;
+  width: 200px;
+  background-color: yellow;
+  margin-left: 20px;
+}
+.fight-status {
+  margin-top: 20px;
+  background-color: grey;
+  height: 75px;
+}
