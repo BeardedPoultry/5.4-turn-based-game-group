@@ -13,6 +13,10 @@
     	$('.popup-div').hide();
     });
 
+    $(document).on('click', '#fightButton', function() {
+      GameApp.router.navigate('fight', {trigger: true});
+    });
+
   });
 
 })();
