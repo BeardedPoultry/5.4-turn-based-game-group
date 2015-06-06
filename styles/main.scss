@@ -1,5 +1,7 @@
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '../bower_components/neat/app/assets/stylesheets/neat';
+
+@import
+ '../bower_components/neat/app/assets/stylesheets/neat';
 
 // Typography
 $base-font-family: $helvetica;
@@ -14,25 +16,45 @@ $very-light-gray: #fafafa;
 $base-font-color: $dark-gray;
 $base-background-color: $very-light-gray;
 
-body #character {
+body {
   font-family: $base-font-family;
   background-color: $base-background-color;
   color: $base-font-color;
-  @include outer-container($local-max-width: $max-width);
+  @include outer-container(1080px);
   margin: 0 auto;
-  background-image: url("");
-  background-repeat: none;
 }
 
 header {
- background-color: green;
- 
+  background-color:rgba(99, 97, 75, .5);
+}
+
+
+ul {
+  list-style: none;
+}
+
+.popup-div{
+  @include span-columns(9);
+  background-color:rgba(99, 97, 75, .5);
 }
 
 .selection-container {
-  background-color: yellow;
+  @include span-columns(9);
 }
 
-#select body {
-  width: 100%;
+.selection-container img {
+  @include span-columns(3 of 9);
+  height: 250px;
+  background-color:rgba(99, 97, 75, .75);
+  border: 10px solid rgba(63, 67, 46, 1);
+  border-radius: 4px;
+}
+
+.selection-container li {
+  position:relative;
+}
+
+.selection-container i {
+  color: rgba(200, 117, 51, 1);
+  position: absolute;
 }
