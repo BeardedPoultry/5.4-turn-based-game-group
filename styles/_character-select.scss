@@ -1,5 +1,6 @@
 html{
   background-image: url('../../asset/background/characterSelect.JPG');
+  background-size: contain;
 }
 
 .selection-container {
@@ -24,10 +25,17 @@ html{
 .selection-container i {
   color: rgba(200, 117, 51, 1);
   position: absolute;
-  border: 1px solid red;
 }
 
 #fightButton{
   height: 40px;
   width: 100px;
+}
+
+.fa {
+  visibility: hidden;
+}
+
+.selection-container img.selected {
+  background-color: rgba(99, 97, 75, 1);
 }

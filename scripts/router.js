@@ -35,7 +35,8 @@ window.GameApp = window.GameApp || {};
     },
 
     fight: function() {
-      $('.application').html(JST['fight-template']());
+      $('.application').html(JST['fight-screen']());
+      $('html').css('background-image', GameApp.arena);
     }
   });
 
