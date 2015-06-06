@@ -29,7 +29,6 @@ width: 450px;
 .villain-img {
   height: 400px;
   width: 200px;
-  background-color: red;
   right: 0;
   position: absolute;
   margin-right: 20px;
@@ -37,11 +36,12 @@ width: 450px;
 .hero-img {
   height: 400px;
   width: 200px;
-  background-color: yellow;
   margin-left: 20px;
 }
 .fight-status {
   margin-top: 20px;
   background-color: grey;
-  height: 75px;
+  height: 125px;
+  position: relative;
+  text-align: center;
 }
