@@ -1,11 +1,29 @@
 
 
 .popup-div{
+  width: 100%;
   background-color:rgba(99, 97, 75, 1);
   z-index: 100;
-  position: absolute;
+  height:100%;
+  position:fixed;
 }
 
 header{
   color:white;
+}
+
+h3,
+h4,
+p{
+  text-align: center;
+}
+
+
+p{
+  padding: 40px;
+}
+
+button,
+input{
+  background-color:RGBA(200, 117, 51, 1);
 }
