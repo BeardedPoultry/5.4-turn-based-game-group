@@ -22,12 +22,6 @@ window.GameApp = window.GameApp || {};
 
         // else
 
-        GameApp.vent.on('attack', function() {
-          GameApp.heroAttack();
-        });
-
-        console.log(target);
-
         // showButton();
 
       });
@@ -36,7 +30,28 @@ window.GameApp = window.GameApp || {};
 
     fight: function() {
       $('.application').html(JST['fight-screen']());
-      $('html').css('background-image', GameApp.arena);
+
+      $('html').css({'background-image': 'url("'+GameApp.arena+'")'});
+      $('.hero-img img').attr('src', '../'+GameApp.hero.avatar);
+      $('.villain-img img').attr('src', '../'+GameApp.villain.avatar);
+
+      $('.villain-turn').fadeOut();
+      GameApp.vent.on('attack', function() {
+          GameApp.heroAttack();
+        });
+      GameApp.vent.on('magic', function() {
+        GameApp.heroMagic();
+      });
+      GameApp.vent.on('use:health-potion', function() {
+        GameApp.useHealth();
+      });
+      GameApp.vent.on('use:bomb', function() {
+        GameApp.useBomb();
+      });
+      GameApp.vent.on('use:double-whammy', function() {
+        GameApp.useWhammy();
+      });
+      // $('html').css('background-image', GameApp.arena);
     }
   });
 
