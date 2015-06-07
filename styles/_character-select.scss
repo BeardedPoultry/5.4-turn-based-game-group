@@ -1,34 +1,26 @@
-html{
+html {
   background: url('../../asset/background/characterSelect.JPG')
   no-repeat center center fixed;
   background-size: cover;
 }
 
-.center-container{
+.center-container {
   @include outer-container(1080px);
 }
-
-/*
-.selectbattle {
-  background-color:RGBA(41, 42, 44, 1);
-  height: 50px;
-  width: 100%;
-}
- */
 
 .selection-container {
   @include span-columns(9);
   @include shift(.5);
-    background-color:rgba(99, 97, 75, 0);
-    z-index: 1;
-    position: absolute;
+  background-color: rgba(99, 97, 75, 0);
+  z-index: 1;
+  position: absolute;
 }
 
 .selection-container img {
   @include span-columns(3 of 9);
   @include omega();
   height: 200px;
-  background-color:rgba(99, 97, 75, .75);
+  background-color: rgba(99, 97, 75, .75);
   border: 10px solid rgba(63, 67, 46, 1);
   border-radius: 4px;
   margin: 10px;
@@ -38,14 +30,14 @@ html{
 
 .selection-container i {
   position: absolute;
-  color: rgba(200, 117, 51, 1);
+  color: rgba (200, 117, 51, 1);
   z-index: 50;
 }
 
-#fightButton{
+#fightButton {
   @include span-columns(6);
   @include shift (3);
-  background-color:RGBA(200, 117, 51, 1);
+  background-color: rgba(200, 117, 51, 1);
   height: 50px;
 
 }
