@@ -8,6 +8,27 @@
   position:fixed;
 }
 
+.popup-div img{
+  width: 300px;
+  height:300px;
+  display:block;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: 20px;
+  border: 10px double RGBA(66, 24, 32, 1);
+}
+
+.textContent{
+  width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom:30px;
+  border: 8px double RGBA(66, 24, 32, 1);
+  border-radius: 10px;
+  background-color:RGBA(66, 24, 32, .25);
+}
+
 header{
   color:white;
 }
@@ -16,14 +37,35 @@ h3,
 h4,
 p{
   text-align: center;
+  margin: 0 auto;
+  padding:0;
 }
 
 
 p{
-  padding: 40px;
+  padding: 10px;
 }
 
 button,
 input{
   background-color:RGBA(200, 117, 51, 1);
+}
+
+
+.characterSelectButton{
+  @include span-columns (6);
+  @include shift (3);
+}
+
+.footer-div{
+  background-color: RGBA(41, 42, 44, .8);
+  height:100px;
+}
+
+
+.footer-div button{
+  height: 40px;
+  margin-top: 20px;
+  border: 2px solid #2C2C2C;
+  border-radius: 10px;
 }

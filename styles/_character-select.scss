@@ -5,7 +5,7 @@ html{
 }
 
 .center-container{
-  @include outer-container(1130px);
+  @include outer-container(1080px);
 }
 
 /*
@@ -17,7 +17,8 @@ html{
  */
 
 .selection-container {
-  @include span-columns(9 of 12);
+  @include span-columns(9);
+  @include shift(.5);
     background-color:rgba(99, 97, 75, 0);
     z-index: 1;
     position: absolute;
@@ -25,7 +26,7 @@ html{
 
 .selection-container img {
   @include span-columns(3 of 9);
- @include omega();
+  @include omega();
   height: 200px;
   background-color:rgba(99, 97, 75, .75);
   border: 10px solid rgba(63, 67, 46, 1);
@@ -39,7 +40,6 @@ html{
   position: absolute;
   color: rgba(200, 117, 51, 1);
   z-index: 50;
-
 }
 
 #fightButton{
