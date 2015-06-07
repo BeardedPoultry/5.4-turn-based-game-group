@@ -1,5 +1,12 @@
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '../bower_components/neat/app/assets/stylesheets/neat';
+
+@import
+ '../bower_components/neat/app/assets/stylesheets/neat';
+
+@import 'popup';
+@import 'character-select';
+@import 'fightscreen';
+
 
 // Typography
 $base-font-family: $helvetica;
@@ -14,25 +21,12 @@ $very-light-gray: #fafafa;
 $base-font-color: $dark-gray;
 $base-background-color: $very-light-gray;
 
-body #character {
+body {
   font-family: $base-font-family;
-  background-color: $base-background-color;
   color: $base-font-color;
-  @include outer-container($local-max-width: $max-width);
   margin: 0 auto;
-  background-image: url("/giphy.gif");
-  background-repeat: none;
 }
 
-header {
- background-color: green;
- 
-}
-
-.selection-container {
-  background-color: yellow;
-}
-
-#select body {
-  width: 100%;
+ul {
+  list-style: none;
 }
