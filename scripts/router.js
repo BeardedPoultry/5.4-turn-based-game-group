@@ -18,6 +18,9 @@ window.GameApp = window.GameApp || {};
           $(target).toggleClass('selected');
           GameApp.hero = new GameApp.GenerateHero(target.id);
           GameApp.heroSelected = true;
+          GameApp.vent.on('can:start', function() {
+            GameApp.allowStart();   
+          });
         }
 
         // else
