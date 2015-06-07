@@ -14,5 +14,5 @@ this["JST"]["fight-screen"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.
     + alias3(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"name","hash":{},"data":data}) : helper)))
     + "</h3>\n		<div class=\"health-red hero\">\n			<div class=\"health-green hero\"></div>\n		</div>\n	</div>\n	<img src=\"\" alt=\"\" class=\"logo\">\n</header>\n\n<section class=\"fight-content\">\n	<div class=\"villain-img\">\n		<img src=\"\" alt=\"\">\n	</div>\n	<div class=\"hero-img\">\n		<img src=\"\" alt=\"\">\n	</div>\n</section>\n\n<footer class=\"fight-status\">\n	<h2 class=\"instructions\">Press SPACE to attack!</h2>\n	<h2 class=\"villain-turn\">"
     + alias3(((helper = (helper = helpers['villain-name'] || (depth0 != null ? depth0['villain-name'] : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"villain-name","hash":{},"data":data}) : helper)))
-    + "'s turn!</h2>\n	<button class=\"hide-footer\">Hide</button>\n	<button class=\"show-footer\">Show</button>\n</footer>\n";
+    + "Villain's turn!</h2>\n	<button class=\"hide-footer\">Hide</button>\n	<button class=\"show-footer\">Show</button>\n</footer>\n";
 },"useData":true});

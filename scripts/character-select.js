@@ -12,8 +12,23 @@ window.GameApp = window.GameApp || {};
 		this.health = (Math.round(Math.random() * 50) + 50);
 		this.attack = function(target) {
 			var damage = (Math.round(Math.random() * 10) + 15);
+			console.log("Hero dealt: " +damage+ ' damage.');
 			healthChange(target, damage);
 			return damage;
+		}
+		this.inventory = ['health-potion','bomb','double-whammy'];
+		this.magic = function(target) {
+			if (!GameApp.hero.usedMagic) {
+				var damage = (Math.round(Math.random() * 10) + 25);
+				healthChange(target, damage);
+				GameApp.hero.usedMagic = true;
+				return damage;
+			}
+		}
+		this.useItem = function(item) {
+			if (this.inventory.indexOf(item) != -1) {
+				inventory[item]();
+			}
 		}
 		this.avatar = images[id]();
 		GameApp.arena = images['arena' + randomize()]();
@@ -24,6 +39,7 @@ window.GameApp = window.GameApp || {};
 		this.health = (Math.round(Math.random() * 50) + 50);
 		this.attack = function(target) {
 			var damage = (Math.round(Math.random() * 10) + 15);
+			console.log("Villain dealt: " +damage+ ' damage.');
 			healthChange(target, damage);
 			return damage;
 		}
@@ -67,6 +83,20 @@ window.GameApp = window.GameApp || {};
 		},
 		'villain3': function () {
 			return '../asset/villain/villain3.png';
+		}
+	}
+
+	var inventory = {
+		'health-potion': function(target) {
+			GameApp.hero.health += 25;
+		},
+		'bomb': function(target, other) {
+			GameApp.villain.health -= 50;
+			GameApp.hero.health -= 40;
+		},
+		'double-whammy': function(target) {
+			GameApp.villain.health -= (Math.round(Math.random() * 10) + 25);
+			GameApp.villain.health -= (Math.round(Math.random() * 10) + 25);
 		}
 	}
 
