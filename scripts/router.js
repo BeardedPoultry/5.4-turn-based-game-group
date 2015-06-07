@@ -22,8 +22,6 @@ window.GameApp = window.GameApp || {};
 
         // else
 
-        console.log(target);
-
         // showButton();
 
       });

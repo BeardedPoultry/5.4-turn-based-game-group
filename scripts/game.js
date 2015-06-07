@@ -5,6 +5,9 @@ window.GameApp = window.GameApp || {};
 
 	var canAttack = true;
 
+	// The following are events that are triggered when certain keys are pressed, corresponding
+	// with an attack or inventory item belonging to the hero.
+
 	$(document).on('keydown', function(e) {
 		var code = e.keyCode;
 		if (code === 32) {
@@ -44,10 +47,11 @@ window.GameApp = window.GameApp || {};
 		if(canAttack === true) {
 			GameApp.hero.attack(GameApp.villain);
 			console.log('Villain health remaining: '+GameApp.villain.health);
-			checkHealth();
-			GameApp.villainAttack();
-			$('.instructions').fadeOut();
-			$('.villain-turn').fadeIn();
+			if(checkHealth()) {
+				GameApp.villainAttack();
+				$('.instructions').fadeOut();
+				$('.villain-turn').fadeIn();
+			};
 			canAttack = false;
 		}
 	}
@@ -68,10 +72,11 @@ window.GameApp = window.GameApp || {};
 		if(canAttack === true) {
 			GameApp.hero.magic(GameApp.villain);
 			console.log('Villain health remaining: ' + GameApp.villain.health);
-			checkHealth();
-			GameApp.villainAttack();
-			$('.instructions').fadeOut();
-			$('.villain-turn').fadeIn();
+			if(checkHealth()) {
+				GameApp.villainAttack();
+				$('.instructions').fadeOut();
+				$('.villain-turn').fadeIn();
+			};
 			canAttack = false;
 		}
 	}
@@ -80,10 +85,11 @@ window.GameApp = window.GameApp || {};
 		if(canAttack === true) {
 			GameApp.hero.useItem('health-potion');
 			console.log('Hero health remaining: ' + GameApp.hero.health);
-			checkHealth();
-			GameApp.villainAttack();
-			$('.instructions').fadeOut();
-			$('.villain-turn').fadeIn();
+			if(checkHealth()) {
+				GameApp.villainAttack();
+				$('.instructions').fadeOut();
+				$('.villain-turn').fadeIn();
+			};
 			canAttack = false;
 		}
 	}
@@ -93,10 +99,11 @@ window.GameApp = window.GameApp || {};
 			GameApp.hero.useItem('bomb');
 			console.log('Hero health remaining: ' + GameApp.hero.health);
 			console.log('Villain health remaining: ' + GameApp.villain.health);
-			checkHealth();
-			GameApp.villainAttack();
-			$('.instructions').fadeOut();
-			$('.villain-turn').fadeIn();
+			if(checkHealth()) {
+				GameApp.villainAttack();
+				$('.instructions').fadeOut();
+				$('.villain-turn').fadeIn();
+			};
 			canAttack = false;
 		}
 	}
@@ -105,10 +112,11 @@ window.GameApp = window.GameApp || {};
 		if(canAttack === true) {
 			GameApp.hero.useItem('double-whammy');
 			console.log('Villain health remaining: ' + GameApp.villain.health);
-			checkHealth();
-			GameApp.villainAttack();
-			$('.instructions').fadeOut();
-			$('.villain-turn').fadeIn();
+			if(checkHealth()) {
+				GameApp.villainAttack();
+				$('.instructions').fadeOut();
+				$('.villain-turn').fadeIn();
+			};
 			canAttack = false;
 		}
 	}
@@ -116,8 +124,12 @@ window.GameApp = window.GameApp || {};
 	function checkHealth () {
 		if (GameApp.hero.health <= 0) {
 			alert("YOU LOST!");
+			return false;
 		} else if (GameApp.villain.health <= 0) {
 			alert("YOU WON!");
+			false;
+		} else {
+			return true;
 		}
 	}
 
