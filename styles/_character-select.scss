@@ -27,9 +27,9 @@ html {
   position: relative;
 }
 
-
 .selection-container i {
   position: absolute;
+
   color: rgba (200, 117, 51, 1);
   z-index: 50;
 }
@@ -40,6 +40,10 @@ html {
   background-color: rgba(200, 117, 51, 1);
   height: 50px;
 
+}
+
+.selected {
+  box-shadow: inset 0 0 35px yellow;
 }
 
 /* .fa {

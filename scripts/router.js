@@ -30,6 +30,11 @@ window.GameApp = window.GameApp || {};
 
     fight: function() {
       $('.application').html(JST['fight-screen']());
+
+      $('html').css({'background-image': 'url("'+GameApp.arena+'")'});
+      $('.hero-img img').attr('src', '../'+GameApp.hero.avatar);
+      $('.villain-img img').attr('src', '../'+GameApp.villain.avatar);
+
       $('.villain-turn').fadeOut();
       GameApp.vent.on('attack', function() {
           GameApp.heroAttack();
