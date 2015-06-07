@@ -1,8 +1,9 @@
+
+
 .popup-div{
-  @include span-columns(9);
   background-color:rgba(99, 97, 75, 1);
-  margin:0 auto;
   z-index: 100;
+  position: absolute;
 }
 
 header{

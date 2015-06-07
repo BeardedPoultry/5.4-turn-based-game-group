@@ -24,14 +24,8 @@ $base-background-color: $very-light-gray;
 body {
   font-family: $base-font-family;
   color: $base-font-color;
-  @include outer-container(1080px);
   margin: 0 auto;
 }
-
-header {
-  background-color:rgba(99, 97, 75, .5);
-}
-
 
 ul {
   list-style: none;
