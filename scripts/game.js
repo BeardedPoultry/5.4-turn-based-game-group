@@ -46,7 +46,7 @@ window.GameApp = window.GameApp || {};
 	GameApp.heroAttack = function() {
 		if(canAttack === true) {
 			GameApp.hero.attack(GameApp.villain);
-			console.log('Villain health remaining: '+GameApp.villain.health);
+			GameApp.changeVillainHealth();
 			if(checkHealth()) {
 				GameApp.villainAttack();
 				$('.instructions').fadeOut();
@@ -59,19 +59,21 @@ window.GameApp = window.GameApp || {};
 	GameApp.villainAttack = function() {
 		setTimeout(function() {
 			GameApp.villain.attack(GameApp.hero);
-			checkHealth();	
-			$('.villain-turn').fadeOut();
-			$('.instructions').fadeIn();
-			console.log('Hero health remaining: '+GameApp.hero.health);
-			console.log('ready');
-			canAttack = true;
+			GameApp.changeHeroHealth();
+			if(checkHealth()) {
+				$('.villain-turn').fadeOut();
+				$('.instructions').fadeIn();
+				console.log('Hero health remaining: '+GameApp.hero.health);
+				console.log('ready');
+				canAttack = true;
+			}
 		}, 3000);
 	}
 
 	GameApp.heroMagic = function() {
 		if(canAttack === true) {
 			GameApp.hero.magic(GameApp.villain);
-			console.log('Villain health remaining: ' + GameApp.villain.health);
+			GameApp.changeVillainHealth();
 			if(checkHealth()) {
 				GameApp.villainAttack();
 				$('.instructions').fadeOut();
@@ -84,7 +86,7 @@ window.GameApp = window.GameApp || {};
 	GameApp.useHealth = function() {
 		if(canAttack === true) {
 			GameApp.hero.useItem('health-potion');
-			console.log('Hero health remaining: ' + GameApp.hero.health);
+			GameApp.changeHeroHealth();
 			if(checkHealth()) {
 				GameApp.villainAttack();
 				$('.instructions').fadeOut();
@@ -97,8 +99,7 @@ window.GameApp = window.GameApp || {};
 	GameApp.useBomb = function() {
 		if(canAttack === true) {
 			GameApp.hero.useItem('bomb');
-			console.log('Hero health remaining: ' + GameApp.hero.health);
-			console.log('Villain health remaining: ' + GameApp.villain.health);
+			GameApp.changeVillainHealth();
 			if(checkHealth()) {
 				GameApp.villainAttack();
 				$('.instructions').fadeOut();
@@ -111,7 +112,7 @@ window.GameApp = window.GameApp || {};
 	GameApp.useWhammy = function() {
 		if(canAttack === true) {
 			GameApp.hero.useItem('double-whammy');
-			console.log('Villain health remaining: ' + GameApp.villain.health);
+			GameApp.changeVillainHealth();
 			if(checkHealth()) {
 				GameApp.villainAttack();
 				$('.instructions').fadeOut();
@@ -131,6 +132,18 @@ window.GameApp = window.GameApp || {};
 		} else {
 			return true;
 		}
+	}
+
+	GameApp.changeHeroHealth = function() {
+		var healthPercent = Math.round((GameApp.hero.health / GameApp.heroHealth) * 100);
+		console.log(healthPercent);
+		$('.health-green.hero').css({'width': ''+healthPercent+'%'})
+	}
+
+	GameApp.changeVillainHealth = function() {
+		var healthPercent = Math.round((GameApp.villain.health / GameApp.villainHealth) * 100);
+		console.log(healthPercent);
+		$('.health-green.villain').css({'width': ''+healthPercent+'%'})
 	}
 
 })();
