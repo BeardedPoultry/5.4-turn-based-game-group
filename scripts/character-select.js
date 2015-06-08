@@ -6,6 +6,7 @@ window.GameApp = window.GameApp || {};
 	$(document).on('click', '.hero', function(e) {
 		var target = e.target;
 		GameApp.vent.trigger('hero:selected', target);
+		GameApp.vent.trigger('can:start');
 	});
 
 	GameApp.GenerateHero = function GenerateHero(id) {
@@ -107,10 +108,10 @@ window.GameApp = window.GameApp || {};
 		}
 	}
 
-	// function highlightRandom (target) {
-	// 	$('img').find().attr('src', target).addClass('selected');
-	// }
-
-	// GameApp.hero = new GenerateHero('hero1');
+	GameApp.allowStart = function() {
+		GameApp.CanStart = true;
+		$('.button').removeClass('');
+		$('.button').addClass('');
+	}
 
 })();
