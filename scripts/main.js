@@ -14,10 +14,20 @@
     });
 
     $(document).on('click', '#fightButton', function() {
-    if (GameApp.CanStart === true) {
-      GameApp.router.navigate('fight', {trigger: true});
-    }
-  });
+      if (GameApp.CanStart === true) {
+        GameApp.router.navigate('fight', {trigger: true});
+      }
+    });
+
+    $(document).on('click', '.hide-footer', function() {
+      $('.fight-status').slideToggle();
+      $('.show-footer').show();
+    });
+
+    $(document).on('click', '.show-footer', function() {
+      $('.fight-status').slideToggle();
+      $('.show-footer').hide();
+    });
 
   });
 

@@ -22,11 +22,6 @@ window.GameApp = window.GameApp || {};
             GameApp.allowStart();   
           });
         }
-
-        // else
-
-        // showButton();
-
       });
 
     },

@@ -10,6 +10,7 @@ window.GameApp = window.GameApp || {};
 
 	$(document).on('keydown', function(e) {
 		var code = e.keyCode;
+		e.preventDefault();
 		if (code === 32) {
 			GameApp.vent.trigger('attack');
 		};

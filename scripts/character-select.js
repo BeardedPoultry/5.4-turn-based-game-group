@@ -51,7 +51,20 @@ window.GameApp = window.GameApp || {};
 
 	function healthChange(target, damage) {
 		target.health -= damage;
+		showDamage(target, damage);
 		return target.health;
+	}
+
+	function showDamage(target, damage) {
+		if (target === GameApp.hero) {
+			$('.hero-img .damage').fadeIn();
+			$('.hero-img .damage').text('-'+damage);
+			$('.hero-img .damage').fadeOut(1500);
+		} else {
+			$('.villain-img .damage').fadeIn();
+			$('.villain-img .damage').text('-'+damage);
+			$('.villain-img .damage').fadeOut(1500);
+		}
 	}
 
 	function randomize() {

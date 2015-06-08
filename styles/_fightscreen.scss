@@ -82,10 +82,11 @@ background-color: rgba(255, 43, 29, 1);
 //-----------------------------------------------------------------------------------------
 .img-villain,
 .img-hero {
-  height: 600px;
-  width: 600px;
-  margin-top: 5px;
-  margin-bottom: -40px;
+  height: 400px;
+  width: 400px;
+  margin-top: 100px;
+  // margin-top: 5px;
+  // margin-bottom: -40px;
 }
 .img-villain {
   right: 0;
@@ -94,15 +95,51 @@ background-color: rgba(255, 43, 29, 1);
 }
 .img-hero {
   margin-left: -20px;
-  margin-top: 1px;
+  // margin-top: 1px;
   margin-bottom: 15px;
 }
 
+.damage {
+  position: absolute;
+  top: 0;
+  color: white;
+  font-size: 2em;
+}
+
+.villain-img .damage {
+  right: 13%;
+  top: 35%;
+}
+
+.hero-img .damage {
+  left: 13%;
+  top: 35%;
+}
+
 .fight-status {
-  margin-top: 20px;
-  margin-bottom: -30px;
-  background-color: grey;
-  height: 75px;
-  position: relative;
+  background-color: rgba(100,100,100,.8);
+  color: white;
+  height: 250px;
+  position: fixed;
+  bottom: 0;
   text-align: center;
+  width: 100%;
+}
+
+.hide-footer {
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 1.2em;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+.show-footer {
+  color: white;
+  position: relative;
+  left: 47.3%;
+  bottom: 3em;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 1.2em;
 }
