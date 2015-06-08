@@ -3,13 +3,15 @@ window.GameApp = window.GameApp || {};
 (function() {
 	'use strict';
 
-	$(document).on('click', 'img', function(e) {
+	$(document).on('click', '.hero', function(e) {
 		var target = e.target;
 		GameApp.vent.trigger('hero:selected', target);
+		GameApp.vent.trigger('can:start');
 	});
 
 	GameApp.GenerateHero = function GenerateHero(id) {
 		this.health = (Math.round(Math.random() * 50) + 50);
+		GameApp.heroHealth = this.health;
 		this.attack = function(target) {
 			var damage = (Math.round(Math.random() * 10) + 15);
 			console.log("Hero dealt: " +damage+ ' damage.');
@@ -37,6 +39,7 @@ window.GameApp = window.GameApp || {};
 
 	function GenerateVillain() {
 		this.health = (Math.round(Math.random() * 50) + 50);
+		GameApp.villainHealth = this.health;
 		this.attack = function(target) {
 			var damage = (Math.round(Math.random() * 10) + 15);
 			console.log("Villain dealt: " +damage+ ' damage.');
@@ -105,10 +108,10 @@ window.GameApp = window.GameApp || {};
 		}
 	}
 
-	// function highlightRandom (target) {
-	// 	$('img').find().attr('src', target).addClass('selected');
-	// }
-
-	// GameApp.hero = new GenerateHero('hero1');
+	GameApp.allowStart = function() {
+		GameApp.CanStart = true;
+		$('.button').removeClass('');
+		$('.button').addClass('');
+	}
 
 })();

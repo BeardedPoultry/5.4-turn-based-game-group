@@ -14,8 +14,10 @@
     });
 
     $(document).on('click', '#fightButton', function() {
+    if (GameApp.CanStart === true) {
       GameApp.router.navigate('fight', {trigger: true});
-    });
+    }
+  });
 
   });
 
