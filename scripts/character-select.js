@@ -10,7 +10,7 @@ window.GameApp = window.GameApp || {};
 	});
 
 	GameApp.GenerateHero = function GenerateHero(id) {
-		this.health = (Math.round(Math.random() * 50) + 50);
+		this.health = (Math.round(Math.random() * 500) + 50);
 		GameApp.heroHealth = this.health;
 		this.attack = function(target) {
 			var damage = (Math.round(Math.random() * 10) + 15);
@@ -38,7 +38,7 @@ window.GameApp = window.GameApp || {};
 	}
 
 	function GenerateVillain() {
-		this.health = (Math.round(Math.random() * 50) + 50);
+		this.health = (Math.round(Math.random() * 500) + 50);
 		GameApp.villainHealth = this.health;
 		this.attack = function(target) {
 			var damage = (Math.round(Math.random() * 10) + 15);
@@ -123,8 +123,7 @@ window.GameApp = window.GameApp || {};
 
 	GameApp.allowStart = function() {
 		GameApp.CanStart = true;
-		$('#fightButton').removeClass('cant-click');
-		$('#fightButton').addClass('clickable-now');
+		$('.fightButton').addClass('clickable-now');
 	}
 
 })();

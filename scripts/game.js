@@ -52,7 +52,7 @@ window.GameApp = window.GameApp || {};
 				GameApp.villainAttack();
 				$('.instructions').fadeOut();
 				$('.villain-turn').fadeIn();
-			};
+			}
 			canAttack = false;
 		}
 	}

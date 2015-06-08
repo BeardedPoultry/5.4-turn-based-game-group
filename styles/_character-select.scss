@@ -29,7 +29,7 @@ html {
   position: relative;
 }
 
-h2{
+.headings{
   @include span-columns (6);
   @include shift(3);
   font-family:Copperplate;
@@ -51,14 +51,14 @@ h2{
   border-radius: 10px;
 }
 
-/* .clickable-now{
+.clickable-now{
   @include span-columns(6);
   @include shift (3);
   background-color: RGBA(200, 117, 51, 1);
   height: 50px;
   border: 3px solid RGBA(66, 24, 32, 1);
   border-radius: 10px;
-} */
+}
 
 .selection-container img.selected {
   background-color: rgba(99, 97, 75, 1);
