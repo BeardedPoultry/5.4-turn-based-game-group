@@ -108,8 +108,8 @@ window.GameApp = window.GameApp || {};
 
 	GameApp.allowStart = function() {
 		GameApp.CanStart = true;
-		$('.button').removeClass('');
-		$('.button').addClass('');
+		$('#fightButton').removeClass('cant-click');
+		$('#fightButton').addClass('clickable-now');
 	}
 
 })();
