@@ -4,6 +4,10 @@ window.GameApp = window.GameApp || {};
 	'use strict';
 
 	var canAttack = true;
+	var usedMagic = false;
+	var usedPotion = false;
+	var usedBomb = false;
+	var usedWhammy = false;
 
 	// The following are events that are triggered when certain keys are pressed, corresponding
 	// with an attack or inventory item belonging to the hero.
@@ -72,54 +76,82 @@ window.GameApp = window.GameApp || {};
 	}
 
 	GameApp.heroMagic = function() {
-		if(canAttack === true) {
-			GameApp.hero.magic(GameApp.villain);
-			GameApp.changeVillainHealth();
-			if(checkHealth()) {
-				GameApp.villainAttack();
-				$('.instructions').fadeOut();
-				$('.villain-turn').fadeIn();
-			};
-			canAttack = false;
+		if(usedMagic === false) {
+			if(canAttack === true) {
+				GameApp.hero.magic(GameApp.villain);
+				GameApp.changeVillainHealth();
+				if(checkHealth()) {
+					GameApp.villainAttack();
+					$('.instructions').fadeOut();
+					$('.villain-turn').fadeIn();
+				};
+				canAttack = true;
+				usedMagic = true;
+			}
+		} else {
+			$('.hero-img .damage').fadeIn();
+			$('.hero-img .damage').text('Already used magic attack!');
+			$('.hero-img .damage').fadeOut(3500);
 		}
 	}
 
 	GameApp.useHealth = function() {
-		if(canAttack === true) {
-			GameApp.hero.useItem('health-potion');
-			GameApp.changeHeroHealth();
-			if(checkHealth()) {
-				GameApp.villainAttack();
-				$('.instructions').fadeOut();
-				$('.villain-turn').fadeIn();
-			};
-			canAttack = false;
+		if(var usedPotion === false) {
+			if(canAttack === true) {
+				GameApp.hero.useItem('health-potion');
+				GameApp.changeHeroHealth();
+				if(checkHealth()) {
+					GameApp.villainAttack();
+					$('.instructions').fadeOut();
+					$('.villain-turn').fadeIn();
+				};
+				canAttack = false;
+				usedPotion = true;
+			}
+		} else {
+			$('.hero-img .damage').fadeIn();
+			$('.hero-img .damage').text('Already used health potion!');
+			$('.hero-img .damage').fadeOut(3500);
 		}
 	}
 
 	GameApp.useBomb = function() {
-		if(canAttack === true) {
-			GameApp.hero.useItem('bomb');
-			GameApp.changeVillainHealth();
-			if(checkHealth()) {
-				GameApp.villainAttack();
-				$('.instructions').fadeOut();
-				$('.villain-turn').fadeIn();
-			};
-			canAttack = false;
+		if(usedBomb === false) {
+			if(canAttack === true) {
+				GameApp.hero.useItem('bomb');
+				GameApp.changeVillainHealth();
+				GameApp.changeHeroHealth();
+				if(checkHealth()) {
+					GameApp.villainAttack();
+					$('.instructions').fadeOut();
+					$('.villain-turn').fadeIn();
+				};
+				canAttack = false;
+				usedBomb = true;
+			}
+		} else {
+			$('.hero-img .damage').fadeIn();
+			$('.hero-img .damage').text('Already used bomb attack!');
+			$('.hero-img .damage').fadeOut(3500);
 		}
 	}
 
 	GameApp.useWhammy = function() {
-		if(canAttack === true) {
-			GameApp.hero.useItem('double-whammy');
-			GameApp.changeVillainHealth();
-			if(checkHealth()) {
-				GameApp.villainAttack();
-				$('.instructions').fadeOut();
-				$('.villain-turn').fadeIn();
-			};
-			canAttack = false;
+		if (usedWhammy === false) {
+			if(canAttack === true) {
+				GameApp.hero.useItem('double-whammy');
+				GameApp.changeVillainHealth();
+				if(checkHealth()) {
+					GameApp.villainAttack();
+					$('.instructions').fadeOut();
+					$('.villain-turn').fadeIn();
+				};
+				canAttack = false;
+			}
+		} else {
+			$('.hero-img .damage').fadeIn();
+			$('.hero-img .damage').text('Already used double whammy!');
+			$('.hero-img .damage').fadeOut(3500);
 		}
 	}
 
