@@ -96,7 +96,7 @@ window.GameApp = window.GameApp || {};
 	}
 
 	GameApp.useHealth = function() {
-		if(var usedPotion === false) {
+		if(usedPotion === false) {
 			if(canAttack === true) {
 				GameApp.hero.useItem('health-potion');
 				GameApp.changeHeroHealth();
